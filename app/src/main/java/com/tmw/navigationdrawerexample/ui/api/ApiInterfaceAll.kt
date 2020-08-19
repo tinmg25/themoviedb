@@ -1,4 +1,4 @@
-package com.tmw.navigationdrawerexample.ui.nowplaying
+package com.tmw.navigationdrawerexample.ui.api
 
 import com.tmw.navigationdrawerexample.modelnowplaying.NowPlaying
 import retrofit2.Call
