@@ -35,7 +35,6 @@ class NowPlayingFragment : Fragment() {
             layoutManager = LinearLayoutManager(context)
             adapter = nowplayingAdapter
         }
-//        nowplayingAdapter.setOnClickListener(this)
         observeViewmodel1()
     }
 
@@ -52,8 +51,3 @@ class NowPlayingFragment : Fragment() {
         nowplayingViewModel.loadResult1()
     }
 }
-
-//    override fun onClick(result: Result) {
-//        var action=("Welcome from fragment 2")
-//        findNavController().navigate(action)
-//}

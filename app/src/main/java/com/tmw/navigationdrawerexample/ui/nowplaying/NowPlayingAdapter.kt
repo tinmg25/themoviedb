@@ -12,42 +12,29 @@ import com.tmw.navigationdrawerexample.modelnowplaying.*
 class NowPlayingAdapter(var resultList: List<Result> = ArrayList()) :
     RecyclerView.Adapter<NowPlayingAdapter.NowPlayingViewHolder>() {
 
-//    var mClickListener: clickListener? = null
-//
-//    fun setOnClickListener(clickListener: clickListener) {
-//        this.mClickListener = clickListener
-//    }
-
     inner class NowPlayingViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
         private lateinit var result: Result
-//
-//        init {
-//            itemView.setOnClickListener(this)
-//        }
 
         fun bindNow(result: Result) {
             this.result = result
 
             itemView.txtAdult.text = result.adult.toString()
-            Picasso.get().load(result.backdrop_path).placeholder(R.drawable.ic_launcher_background)
+            Picasso.get().load("https://image.tmdb.org/t/p/w500/${result.backdrop_path}").placeholder(R.drawable.ic_launcher_background)
                 .into(itemView.imgBackdropPath)
             itemView.txtID.text = result.id.toString()
             itemView.txtOrgLanguage.text = result.original_language
             itemView.txtOrgTitle.text = result.original_title
             itemView.txtOverView.text = result.overview
             itemView.txtPopularity.text = result.popularity.toString()
-            Picasso.get().load(result.poster_path).placeholder(R.drawable.ic_launcher_background)
+            Picasso.get().load("https://image.tmdb.org/t/p/original/${result.poster_path}").placeholder(R.drawable.ic_launcher_background)
                 .into(itemView.imgPoster)
             itemView.txtTitle.text = result.title
             itemView.txtVideo.text = result.video.toString()
             itemView.txtVoteAvg.text = result.vote_average.toString()
             itemView.txtVoteCount.text = result.vote_count.toString()
         }
-//
-//        override fun onClick(view: View?) {
-//            mClickListener?.onClick(result)
-//        }
+
     }
 
     fun updateNowPlaying(resultList: List<Result>) {
@@ -69,7 +56,4 @@ class NowPlayingAdapter(var resultList: List<Result> = ArrayList()) :
         holder.bindNow(resultList[position])
     }
 
-//    interface clickListener {
-//        fun onClick(result: Result)
-//    }
 }
